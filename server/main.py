@@ -15,8 +15,8 @@ CONTENT_PATH = ROOT / "data" / "content.json"
 SESSION_SECRET = os.environ.get("SESSION_SECRET", "dev-change-me-in-production")
 RESUME_ADMIN_PASSWORD = os.environ.get("RESUME_ADMIN_PASSWORD")
 
-app = FastAPI()
-app.add_middleware(
+application = FastAPI()
+application.add_middleware(
     SessionMiddleware,
     secret_key=SESSION_SECRET,
     same_site="lax",
@@ -50,12 +50,12 @@ def atomic_write(path: Path, data: dict) -> None:
         raise
 
 
-@app.get("/api/auth/status")
+@application.get("/api/auth/status")
 async def auth_status(request: Request):
     return {"authenticated": bool(request.session.get("admin"))}
 
 
-@app.post("/api/login")
+@application.post("/api/login")
 async def login(request: Request, body: LoginBody):
     if not RESUME_ADMIN_PASSWORD:
         raise HTTPException(status_code=503, detail="RESUME_ADMIN_PASSWORD not set on server")
@@ -65,18 +65,18 @@ async def login(request: Request, body: LoginBody):
     return {"ok": True}
 
 
-@app.post("/api/logout")
+@application.post("/api/logout")
 async def logout(request: Request):
     request.session.clear()
     return {"ok": True}
 
 
-@app.get("/api/content")
+@application.get("/api/content")
 async def get_content():
     return read_content()
 
 
-@app.put("/api/content")
+@application.put("/api/content")
 async def put_content(request: Request, data: dict = Body(...)):
     if not request.session.get("admin"):
         raise HTTPException(status_code=401, detail="Unauthorized")
@@ -84,7 +84,7 @@ async def put_content(request: Request, data: dict = Body(...)):
     return {"ok": True}
 
 
-@app.middleware("http")
+@application.middleware("http")
 async def serve_custom_404(request: Request, call_next):
     response = await call_next(request)
     if response.status_code != 404:
@@ -98,4 +98,6 @@ async def serve_custom_404(request: Request, call_next):
     return FileResponse(path404, status_code=404, media_type="text/html")
 
 
-app.mount("/", StaticFiles(directory=str(ROOT), html=True), name="static")
+application.mount("/", StaticFiles(directory=str(ROOT), html=True), name="static")
+
+uvicorn.run(application, host='0.0.0.0', log_level='info')
