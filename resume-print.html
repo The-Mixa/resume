@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Резюме — печать</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/print.css" />
+  </head>
+  <body class="print-resume-page tone-sober">
+    <div class="print-page container" id="print-root">
+      <div class="print-page__toolbar">
+        <button type="button" class="btn btn--primary" id="print-btn">Печать / PDF</button>
+        <a href="index.html" class="btn btn--secondary">← На главную</a>
+      </div>
+      <header>
+        <h1 id="print-name"></h1>
+        <p class="print-tagline" id="print-tagline" hidden></p>
+        <div class="print-contacts" id="print-contacts"></div>
+      </header>
+      <p class="print-elevator" id="print-elevator" hidden></p>
+      <p class="print-desc" id="print-description"></p>
+      <section class="print-career" id="print-career" hidden></section>
+      <h2>Проекты</h2>
+      <div id="print-projects"></div>
+      <h2>Образование</h2>
+      <div id="print-education"></div>
+      <h2>Метрики и стек</h2>
+      <div class="print-metrics" id="print-metrics"></div>
+    </div>
+    <script type="module" src="js/print-resume.js"></script>
+  </body>
+</html>

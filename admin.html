@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ-панель — Резюме</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div class="security-banner" id="security-banner">
+      ⚠️ Используйте сервер (uvicorn) и пароль из переменной RESUME_ADMIN_PASSWORD. На публичном хостинге нужен HTTPS.
+      <button type="button" class="close-banner" onclick="this.parentElement.style.display='none'">✕</button>
+    </div>
+    <section id="admin-login" class="admin-login">
+      <div class="admin-login__card">
+        <h1>🔐 Вход в панель</h1>
+        <p class="login-hint">Введите пароль администратора (задаётся на сервере).</p>
+        <form id="login-form" class="login-form">
+          <div class="form-group">
+            <input
+              type="password"
+              id="admin-password"
+              class="form-input"
+              placeholder="Пароль"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Войти</button>
+          <p id="login-error" class="error-msg" hidden>Неверный пароль или сервер недоступен</p>
+        </form>
+      </div>
+    </section>
+    <div id="admin-dashboard" class="admin-dashboard" hidden>
+      <header class="admin-header">
+        <div class="admin-header__logo"><span>⚙️</span><span>Панель управления</span></div>
+        <div class="admin-header__actions">
+          <button type="button" id="save-server-btn" class="btn btn--primary btn--sm">💾 На сервер</button>
+          <button type="button" id="preview-btn" class="btn btn--secondary btn--sm">👁️ Предпросмотр</button>
+          <button type="button" id="logout-btn" class="btn btn--secondary btn--sm">Выйти</button>
+        </div>
+      </header>
+      <main class="admin-main">
+        <nav class="admin-tabs">
+          <button type="button" class="tab-btn active" data-tab="texts">📝 Тексты</button>
+          <button type="button" class="tab-btn" data-tab="projects">📦 Проекты</button>
+          <button type="button" class="tab-btn" data-tab="visibility">👁️ Видимость</button>
+          <button type="button" class="tab-btn" data-tab="export">💾 Экспорт</button>
+        </nav>
+        <div class="tab-content">
+          <div id="tab-texts" class="tab-pane active">
+            <p class="pane-desc">
+              Редактируйте заголовки и описания. Изменения в памяти; нажмите «На сервер» или используйте экспорт.
+            </p>
+            <div id="texts-editor" class="texts-grid"></div>
+          </div>
+          <div id="tab-projects" class="tab-pane">
+            <div class="pane-header">
+              <h3>Управление проектами</h3>
+              <button type="button" id="add-project-btn" class="btn btn--primary btn--sm">+ Добавить проект</button>
+            </div>
+            <div id="projects-list" class="projects-admin-list"></div>
+            <dialog id="project-dialog" class="admin-dialog">
+              <form id="project-form" class="admin-form">
+                <h3 id="dialog-title">Новый проект</h3>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>Название (RU)</label><input type="text" name="title_ru" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Название (EN)</label><input type="text" name="title_en" class="form-input" required />
+                  </div>
+                  <div class="form-group full-width">
+                    <label>Описание (RU)</label><textarea name="desc_ru" class="form-input" rows="3" required></textarea>
+                  </div>
+                  <div class="form-group full-width">
+                    <label>Описание (EN)</label><textarea name="desc_en" class="form-input" rows="3" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Теги (через запятую)</label
+                    ><input type="text" name="tags" class="form-input" placeholder="ml,web" />
+                  </div>
+                  <div class="form-group">
+                    <label>Дата (ISO)</label><input type="date" name="date" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Метрики (RU)</label><input type="text" name="metrics_ru" class="form-input" />
+                  </div>
+                  <div class="form-group">
+                    <label>Метрики (EN)</label><input type="text" name="metrics_en" class="form-input" />
+                  </div>
+                  <div class="form-group full-width">
+                    <label>Стек (через запятую)</label
+                    ><input type="text" name="stack" class="form-input" placeholder="FastAPI, React" />
+                  </div>
+                  <div class="form-group full-width">
+                    <label>Ссылка</label><input type="url" name="link" class="form-input" placeholder="https://..." />
+                  </div>
+                  <div class="form-group full-width">
+                    <label>README / Markdown (RU)</label>
+                    <textarea name="md_ru" class="form-input" rows="6" placeholder="## Заголовок"></textarea>
+                  </div>
+                  <div class="form-group full-width">
+                    <label>README / Markdown (EN)</label>
+                    <textarea name="md_en" class="form-input" rows="6" placeholder="## Heading"></textarea>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn--secondary" id="cancel-dialog">Отмена</button>
+                  <button type="submit" class="btn btn--primary" id="save-project-btn">Сохранить</button>
+                </div>
+              </form>
+            </dialog>
+          </div>
+          <div id="tab-visibility" class="tab-pane">
+            <p class="pane-desc">Включайте/отключайте отображение секций на главной странице.</p>
+            <div id="visibility-toggles" class="toggles-grid"></div>
+          </div>
+          <div id="tab-export" class="tab-pane">
+            <div class="export-card">
+              <h3>💾 Экспорт данных</h3>
+              <p>Сохранить на сервер и/или скачать JSON.</p>
+              <button type="button" id="export-json-btn" class="btn btn--primary">📥 Скачать JSON</button>
+              <pre id="json-preview" class="json-preview" hidden></pre>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="js/admin/main.js"></script>
+  </body>
+</html>

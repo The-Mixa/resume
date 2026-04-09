@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page.title">Михаил Кириченко — Резюме</title>
+    <meta name="description" id="meta-description" content="Резюме разработчика и участника ВСОШ по ИИ" />
+    <meta property="og:title" id="meta-og-title" content="Михаил Кириченко — Разработчик | ВСОШ по ИИ" />
+    <meta property="og:description" id="meta-og-description" content="Python • ML • Fullstack • Олимпиады" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" id="meta-og-url" />
+    <meta property="og:image" content="" id="meta-og-image" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Михаил Кириченко — Резюме" id="meta-tw-title" />
+    <meta name="twitter:description" content="Python • ML • Fullstack" id="meta-tw-desc" />
+    <link rel="canonical" href="" id="link-canonical" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/effects.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "marked": "https://cdn.jsdelivr.net/npm/marked@12.0.1/+esm",
+          "dompurify": "https://cdn.jsdelivr.net/npm/dompurify@3.1.7/+esm"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav"
+          aria-label="Меню"
+        >
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <div class="header__logo">
+          <span class="logo__initials">МК</span>
+          <span class="logo__name" data-i18n="header.name">Михаил Кириченко</span>
+        </div>
+        <nav class="nav" id="nav" aria-label="Основное меню">
+          <a href="#about" class="nav__link active" data-i18n="nav.about" data-nav-section="about">Обо мне</a>
+          <a href="#skills" class="nav__link" data-i18n="nav.skills" data-nav-section="skills">Навыки</a>
+          <a href="#projects" class="nav__link" data-i18n="nav.projects" data-nav-section="projects">Проекты</a>
+          <a href="#education" class="nav__link" data-i18n="nav.education" data-nav-section="education">Образование</a>
+          <a href="#contacts" class="nav__link" data-i18n="nav.contacts" data-nav-section="contacts">Контакты</a>
+        </nav>
+        <div class="header__controls">
+          <div class="mode-switch-wrap">
+            <div class="mode-switch" role="radiogroup" aria-label="Цель просмотра резюме" id="mode-switch">
+              <label class="mode-switch__item"
+                ><input type="radio" name="resume-mode" value="university" checked /><span data-i18n="mode.university">Вуз</span></label
+              >
+              <label class="mode-switch__item"
+                ><input type="radio" name="resume-mode" value="internship" /><span data-i18n="mode.internship">Стажировка</span></label
+              >
+              <label class="mode-switch__item"
+                ><input type="radio" name="resume-mode" value="grant" /><span data-i18n="mode.grant">Грант</span></label
+              >
+            </div>
+            <p class="mode-switch__hint" data-i18n="mode.hint">Меняет порядок разделов под вашу цель</p>
+          </div>
+          <button type="button" class="control-btn" id="tone-sober-toggle" aria-pressed="false">
+            <span class="tone-sober-icon" aria-hidden="true">◎</span>
+          </button>
+          <button class="control-btn" id="lang-toggle" aria-label="Переключить язык">
+            <span class="lang-current">RU</span>
+          </button>
+          <button class="control-btn" id="theme-toggle" aria-label="Переключить тему">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" id="main-sections">
+      <section id="about" class="section section--hero" data-section="about">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <span class="hero__title-line" data-i18n="hero.title">Разработчик</span>
+              <span class="hero__title-accent" data-i18n="hero.subtitle">| Участник ВСОШ по ИИ</span>
+            </h1>
+            <p class="hero__elevator" id="hero-elevator" hidden></p>
+            <p class="hero__description" id="hero-description" data-i18n="hero.description">
+              Школьник 11 класса с фокусом на Machine Learning, Fullstack-разработку и алгоритмы. Призёр заключительного этапа ВСОШ по ИИ, автор работающих продуктов и исследовательских проектов.
+            </p>
+            <p class="hero__mode-intro" id="hero-mode-intro" hidden></p>
+            <div class="hero__badges" id="hero-badges" aria-label="Достижения"></div>
+            <section class="hero__availability-block" id="hero-availability" aria-labelledby="availability-heading">
+              <h2 class="hero__availability-title" id="availability-heading" data-i18n="availability.heading">Доступность и цели</h2>
+              <dl class="hero__availability-dl" id="hero-availability-dl"></dl>
+            </section>
+            <p class="hero__career-intent" id="hero-career-intent" hidden></p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary" data-i18n="hero.cta">Смотреть проекты</a>
+              <a href="mailto:misha.oleg548@gmail.com" class="btn btn--secondary" data-i18n="hero.contact">Связаться</a>
+            </div>
+            <div class="hero__meta" id="hero-meta-row"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section" data-section="skills">
+        <div class="container">
+          <h2 class="section__title" data-i18n="skills.title">Навыки</h2>
+          <div class="skills__grid">
+            <div class="skill-category" data-category="languages">
+              <h3 class="skill-category__title" data-i18n="skills.metrics">Объективные метрики</h3>
+              <div class="skill-metrics" id="skill-metrics-container"></div>
+            </div>
+            <div class="skill-category" data-category="tools">
+              <h3 class="skill-category__title" data-i18n="skills.stackProof">Стек → Доказательство</h3>
+              <div class="stack-proof" id="stack-proof-container"></div>
+            </div>
+            <div class="skill-category" data-category="soft">
+              <h3 class="skill-category__title" data-i18n="skills.soft">Гибкие навыки</h3>
+              <ul class="soft-list" id="soft-skills-container"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" data-section="projects">
+        <div class="container">
+          <h2 class="section__title" data-i18n="projects.title">Проекты</h2>
+          <div class="filters" id="project-filters">
+            <button type="button" class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">Все</button>
+            <button type="button" class="filter-btn" data-filter="ml" data-i18n="projects.filters.ml">ML</button>
+            <button type="button" class="filter-btn" data-filter="web" data-i18n="projects.filters.web">Web</button>
+            <button type="button" class="filter-btn" data-filter="olymp" data-i18n="projects.filters.olymp">Олимпиады</button>
+            <button type="button" class="filter-btn" data-filter="research" data-i18n="projects.filters.research">Исследования</button>
+          </div>
+          <div class="projects-empty" id="projects-empty" hidden>
+            <p data-i18n="projects.empty">Нет проектов по этому фильтру.</p>
+            <button type="button" class="btn btn--secondary btn--sm" id="projects-empty-reset" data-i18n="projects.reset">
+              Сбросить фильтр
+            </button>
+          </div>
+          <div class="projects-grid" id="projects-container"></div>
+        </div>
+      </section>
+
+      <section id="education" class="section" data-section="education">
+        <div class="container">
+          <h2 class="section__title" data-i18n="education.title">Образование и курсы</h2>
+          <div class="timeline" id="education-timeline"></div>
+        </div>
+      </section>
+
+      <section id="contacts" class="section section--contacts" data-section="contacts">
+        <div class="container">
+          <h2 class="section__title" data-i18n="contacts.title">Контакты</h2>
+          <div class="contacts-grid">
+            <a href="mailto:misha.oleg548@gmail.com" class="contact-card"
+              ><span class="contact-icon">✉️</span>
+              <div>
+                <div class="contact-label" data-i18n="contacts.email">Email</div>
+                <div class="contact-value">misha.oleg548@gmail.com</div>
+              </div></a
+            >
+            <a href="mailto:miha.548@ya.ru" class="contact-card"
+              ><span class="contact-icon">✉️</span>
+              <div>
+                <div class="contact-label" data-i18n="contacts.email_alt">Email (альт.)</div>
+                <div class="contact-value">miha.548@ya.ru</div>
+              </div></a
+            >
+            <a href="https://t.me/mshkltvn" target="_blank" rel="noopener noreferrer" class="contact-card"
+              ><span class="contact-icon">📱</span>
+              <div>
+                <div class="contact-label">Telegram</div>
+                <div class="contact-value">@mshkltvn</div>
+              </div></a
+            >
+            <a href="https://github.com/The-Mixa" target="_blank" rel="noopener noreferrer" class="contact-card"
+              ><span class="contact-icon">💻</span>
+              <div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">github.com/The-Mixa</div>
+              </div></a
+            >
+            <a href="https://kaggle.com/themixa" target="_blank" rel="noopener noreferrer" class="contact-card"
+              ><span class="contact-icon">📊</span>
+              <div>
+                <div class="contact-label">Kaggle</div>
+                <div class="contact-value">kaggle.com/themixa</div>
+              </div></a
+            >
+          </div>
+          <div class="contacts__note" data-i18n="contacts.note">
+            📍 Москва • 🎓 Выпуск 2026 • 💼 Гибридный формат • 🚀 Готов учиться параллельно с работой
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__row">
+        <p class="footer__text">
+          <span data-i18n="footer.copyright">© 2025 Михаил Кириченко</span>
+        </p>
+        <p class="footer__print">
+          <a href="resume-print.html" class="footer__print-link" data-i18n="footer.print">Версия для печати / PDF</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="application/ld+json" id="schema-jsonld"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "lastUpdated": "2025-06-15T10:00:00Z",
+    "version": "2.1.0",
+    "siteUrl": "https://YOUR-DOMAIN.example",
+    "ogImage": "/og-cover.png",
+    "description": {
+      "ru": "ML и fullstack: олимпиады по ИИ, продакшен-бот, исследования с МГУ. Ищу стажировку или исследовательские задачи.",
+      "en": "ML & fullstack: AI olympiad, production bot, MSU research. Seeking internship or research roles."
+    }
+  },
+  "positioning": {
+    "elevator": {
+      "ru": "Школьник 11 класса: ML, backend и fullstack — от олимпиад до продакшена.",
+      "en": "Grade 11 student: ML, backend & fullstack — from olympiads to production."
+    },
+    "careerIntent": {
+      "ru": "В ближайшие 1–2 года — углубление в прикладной ML и инженерию данных, плюс сильный backend; открыт к стажировкам, R&D и продуктовым командам с наставничеством.",
+      "en": "In the next 1–2 years: deeper applied ML & data engineering, strong backend; open to internships, R&D, and product teams with mentorship."
+    }
+  },
+  "modes": {
+    "university": {
+      "sectionOrder": ["about", "education", "skills", "projects", "contacts"],
+      "emphasis": "education",
+      "intro": {
+        "ru": "Поступление в вуз: олимпиады, сильное школьное образование, исследовательский бэкграунд.",
+        "en": "University admissions: olympiads, strong school background, research experience."
+      }
+    },
+    "internship": {
+      "sectionOrder": ["about", "projects", "skills", "education", "contacts"],
+      "emphasis": "projects",
+      "intro": {
+        "ru": "Стажировка: продакшен-проекты, стек и измеримый эффект.",
+        "en": "Internship: production projects, stack, and measurable impact."
+      }
+    },
+    "grant": {
+      "sectionOrder": ["about", "projects", "education", "skills", "contacts"],
+      "emphasis": "projects",
+      "intro": {
+        "ru": "Исследования и проекты с измеримым результатом: партнёрства (МГУ), открытые артефакты и метрики по проектам ниже.",
+        "en": "Research-oriented work with measurable outcomes: partnerships (MSU), open artifacts, and project metrics below."
+      }
+    }
+  },
+  "hero": {
+    "description": {
+      "ru": "Школьник 11 класса с фокусом на Machine Learning, fullstack и алгоритмы. Призёр заключительного этапа ВСОШ по ИИ, автор работающих продуктов и исследовательских проектов.",
+      "en": "11th grade student focused on machine learning, fullstack, and algorithms. Finalist of the All-Russian Olympiad in AI; author of production software and research-oriented projects."
+    },
+    "trustBadges": [
+      {
+        "label": { "ru": "Призёр ВСОШ по ИИ", "en": "VSOSH AI medalist" },
+        "href": "#projects"
+      },
+      {
+        "label": { "ru": "Продакшен: Telegram-бот", "en": "Production: Telegram bot" },
+        "href": "#project-restaurant-bot"
+      },
+      {
+        "label": { "ru": "Партнёрство: ИИ МГУ", "en": "Partnership: MSU AI Institute" },
+        "href": "#project-knowledge-maps"
+      }
+    ],
+    "availability": {
+      "format": {
+        "ru": "Гибрид / удалённо / Москва",
+        "en": "Hybrid / remote / Moscow"
+      },
+      "hours": {
+        "ru": "20–30 ч/нед (учёба + проекты), летом до 40 ч/нед",
+        "en": "20–30 hrs/week (school + projects), up to 40 in summer"
+      },
+      "roles": {
+        "ru": "ML / backend / fullstack, стажировки, исследовательские задачи",
+        "en": "ML / backend / fullstack, internships, research tasks"
+      },
+      "timeline": {
+        "ru": "Старт: лето–осень 2026; готов к параллельной учёбе",
+        "en": "Start: summer–fall 2026; open to combining with studies"
+      }
+    }
+  },
+  "skillMetrics": [
+    {
+      "id": "python",
+      "name": "Python",
+      "years": 5,
+      "tasksSolved": 420,
+      "taskSource": {
+        "ru": "Codeforces / олимпиадные сборы (условные задачи по алгоритмам и реализации)",
+        "en": "Codeforces / contest training (algorithmic & implementation tasks)"
+      },
+      "profileUrl": "https://codeforces.com/profile/YOUR_HANDLE",
+      "projectsCount": 3,
+      "projectsCountNote": {
+        "ru": "Ключевые публичные проекты на этом сайте; остальное — учебные и внутренние.",
+        "en": "Key public projects on this site; others are academic/internal."
+      },
+      "notes": {
+        "ru": "FastAPI, PyTorch, продакшен-бот",
+        "en": "FastAPI, PyTorch, production bot"
+      }
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "years": 3,
+      "tasksSolved": 310,
+      "taskSource": {
+        "ru": "Тренировки по олимпиадной информатике (школьный банк, сборы)",
+        "en": "Competitive programming training (school contests)"
+      },
+      "projectsCount": 2,
+      "notes": {
+        "ru": "Олимпиадные задачи",
+        "en": "Competitive programming"
+      }
+    },
+    {
+      "id": "js",
+      "name": "JavaScript",
+      "years": 3,
+      "tasksSolved": 120,
+      "taskSource": {
+        "ru": "LeetCode / учебные задачи по фронту и алгоритмам",
+        "en": "LeetCode / frontend & algorithms practice"
+      },
+      "projectsCount": 3,
+      "notes": {
+        "ru": "React, Telegram WebApp",
+        "en": "React, Telegram WebApp"
+      }
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "years": 2,
+      "tasksSolved": 80,
+      "taskSource": {
+        "ru": "Курсы и практика запросов к БД",
+        "en": "Courses and DB query practice"
+      },
+      "projectsCount": 2,
+      "notes": {
+        "ru": "PostgreSQL в проде",
+        "en": "PostgreSQL in production"
+      }
+    },
+    {
+      "id": "htmlcss",
+      "name": "HTML/CSS",
+      "years": 4,
+      "tasksSolved": 0,
+      "projectsCount": 4,
+      "projectsCountNote": {
+        "ru": "Включая верстку этого резюме и учебные макеты.",
+        "en": "Including this resume layout and study mockups."
+      },
+      "notes": {
+        "ru": "Верстка резюме и мини-приложений",
+        "en": "Resume and mini-apps UI"
+      }
+    }
+  ],
+  "softSkillCases": [
+    {
+      "title": { "ru": "Хакатон PROD", "en": "PROD hackathon" },
+      "story": {
+        "ru": "Лидировал команду из 3 человек: декомпозиция задач, Git-flow, MVP за 48 часов.",
+        "en": "Led a 3-person team: task breakdown, Git-flow, MVP in 48 hours."
+      },
+      "link": null
+    },
+    {
+      "title": { "ru": "Дедлайны в продакшене", "en": "Production deadlines" },
+      "story": {
+        "ru": "Поддержка Telegram-бота: релизы по спринтам, мониторинг инцидентов, низкая доля просрочек по внутренним задачам.",
+        "en": "Telegram bot maintenance: sprint releases, incident monitoring, low overdue rate on internal tasks."
+      },
+      "link": "https://t.me/HelpSuprabot"
+    },
+    {
+      "title": { "ru": "Наставничество", "en": "Mentoring" },
+      "story": {
+        "ru": "Репетиторство по математике и информатике: разбор задач, подготовка к олимпиадам и экзаменам.",
+        "en": "Math & CS tutoring: problem solving, olympiad and exam prep."
+      },
+      "link": null
+    }
+  ],
+  "stackProof": [
+    {
+      "technology": { "ru": "FastAPI + PostgreSQL", "en": "FastAPI + PostgreSQL" },
+      "proof": {
+        "ru": "50+ активных пользователей/день, p95 ответа API < 200 мс (продакшен-бот).",
+        "en": "50+ active users/day, API p95 < 200 ms (production bot)."
+      },
+      "projectIds": ["restaurant-bot"]
+    },
+    {
+      "technology": { "ru": "PyTorch + Pandas", "en": "PyTorch + Pandas" },
+      "proof": {
+        "ru": "Финал ВСОШ по ИИ: табличные данные, NLP, CV.",
+        "en": "VSOSH AI finals: tabular data, NLP, CV."
+      },
+      "projectIds": ["vsosh-ai-2026"]
+    },
+    {
+      "technology": { "ru": "LLM fine-tuning + RAG", "en": "LLM fine-tuning + RAG" },
+      "proof": {
+        "ru": "Проект с ИИ МГУ: иерархические карты знаний, оценка комиссии 9/10.",
+        "en": "MSU AI project: hierarchical knowledge maps, jury score 9/10."
+      },
+      "projectIds": ["knowledge-maps"]
+    }
+  ],
+  "header": {
+    "name": { "ru": "Михаил Кириченко", "en": "Mikhail Kirichenko" },
+    "title": { "ru": "Разработчик | Участник ВСОШ по ИИ", "en": "Developer | VSOSH AI Finalist" },
+    "location": "Москва"
+  },
+  "contacts": {
+    "email": ["misha.oleg548@gmail.com", "miha.548@ya.ru"],
+    "telegram": "@mshkltvn",
+    "github": "https://github.com/The-Mixa",
+    "kaggle": "https://kaggle.com/themixa"
+  },
+  "projects": [
+    {
+      "id": "vsosh-ai-2026",
+      "title": { "ru": "ВСОШ по ИИ — финал", "en": "VSOSH AI — Final" },
+      "description": {
+        "ru": "Призёр заключительного этапа Всероссийской олимпиады школьников по ИИ. Задачи: анализ табличных данных, кластеризация, NLP, компьютерное зрение.",
+        "en": "Finalist of the All-Russian Olympiad in AI. Tasks: tabular data analysis, clustering, NLP, computer vision."
+      },
+      "tags": ["olymp", "ml", "research"],
+      "date": "2025-03-01",
+      "metrics": {
+        "ru": "🏆 22 место в стране | 🥈 16 среди 11-классников",
+        "en": "🏆 22nd in Russia | 🥈 16th among 11th graders"
+      },
+      "stack": ["Pandas", "PyTorch", "NLP", "CV"],
+      "link": "https://vsosh-ai-2026.onrender.com",
+      "visible": true,
+      "detailMarkdown": {
+        "ru": "## Задача\nСоревнование по ИИ: таблицы, кластеризация, NLP и CV.\n\n## Результат\n- Призёр финала\n- Устойчивые пайплайны на **PyTorch** и классическом ML",
+        "en": "## Task\nAI competition: tabular data, clustering, NLP and CV.\n\n## Outcome\n- Final stage medalist\n- Pipelines in **PyTorch** and classical ML"
+      }
+    },
+    {
+      "id": "restaurant-bot",
+      "title": { "ru": "Telegram-бот для ресторана", "en": "Telegram Bot for Restaurant" },
+      "description": {
+        "ru": "Полноценное мини-приложение с бронированием, оплатой и админ-панелью. Архитектура: FastAPI + React + Docker + PostgreSQL.",
+        "en": "Full-featured mini-app with booking, payment, and admin panel. Architecture: FastAPI + React + Docker + PostgreSQL."
+      },
+      "tags": ["web"],
+      "date": "2024-11-01",
+      "metrics": {
+        "ru": "👥 50+ пользователей/день | ✅ Работает в продакшене",
+        "en": "👥 50+ users/day | ✅ Production ready"
+      },
+      "stack": ["FastAPI", "React", "Docker", "PostgreSQL"],
+      "link": "https://t.me/HelpSuprabot",
+      "visible": true,
+      "detailMarkdown": {
+        "ru": "## Архитектура\n- **FastAPI** — API и webhooks\n- **React** — админка и mini-app\n- **PostgreSQL** + миграции\n\n## Метрики\n50+ MAU, деплой в Docker.",
+        "en": "## Architecture\n- **FastAPI** — API & webhooks\n- **React** — admin & mini-app\n- **PostgreSQL** + migrations\n\n## Metrics\n50+ MAU, Docker deploy."
+      }
+    },
+    {
+      "id": "knowledge-maps",
+      "title": { "ru": "Карты знаний с ИИ", "en": "AI Knowledge Maps" },
+      "description": {
+        "ru": "Совместный проект с Институтом ИИ МГУ. Модель на базе fine-tuned LLM + RAG + векторная БД автоматически строит иерархические карты знаний из текста.",
+        "en": "Joint project with MSU AI Institute. Fine-tuned LLM + RAG + Vector DB model automatically builds hierarchical knowledge maps from text."
+      },
+      "tags": ["ml", "research"],
+      "date": "2024-09-01",
+      "metrics": {
+        "ru": "⭐ Оценка комиссии: 9/10 | 📚 100+ карт создано",
+        "en": "⭐ Jury score: 9/10 | 📚 100+ maps generated"
+      },
+      "stack": ["LLM Fine-tuning", "RAG", "Vector DB", "NLP"],
+      "link": null,
+      "visible": true,
+      "detailMarkdown": {
+        "ru": "## Партнёрство\nИнститут ИИ МГУ.\n\n## Подход\nFine-tuned LLM + **RAG** + векторная БД.",
+        "en": "## Partnership\nMSU AI Institute.\n\n## Approach\nFine-tuned LLM + **RAG** + vector DB."
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": { "ru": "Университетская Гимназия МГУ", "en": "MSU University Gymnasium" },
+      "type": "school",
+      "date": "2026-06-01",
+      "description": {
+        "ru": "Профиль: Программирование. Углублённое изучение: информатика, математика, физика. Ожидаемый средний балл ЕГЭ: 94.5",
+        "en": "Profile: Programming. Advanced study: Computer Science, Math, Physics. Expected USE average: 94.5"
+      }
+    },
+    {
+      "title": { "ru": "Яндекс.Лицей", "en": "Yandex Lyceum" },
+      "type": "course",
+      "date": "2024-01-01",
+      "description": {
+        "ru": "Основы Python, Промышленное программирование, Анализ данных, Работа с большими данными",
+        "en": "Python Basics, Industrial Programming, Data Analysis, Big Data"
+      },
+      "outcome": {
+        "ru": "Итоговые проекты по треку анализа данных; сертификат по запросу.",
+        "en": "Capstone projects in data analysis track; certificate available on request."
+      },
+      "credentialUrl": null
+    },
+    {
+      "title": { "ru": "Stepik", "en": "Stepik" },
+      "type": "course",
+      "date": "2024-06-01",
+      "description": {
+        "ru": "Анализ данных для начинающих, Прикладной анализ данных",
+        "en": "Data Analysis for Beginners, Applied Data Analysis"
+      },
+      "outcome": {
+        "ru": "Практические задания по pandas и визуализации.",
+        "en": "Hands-on pandas and visualization assignments."
+      },
+      "credentialUrl": "https://stepik.org/users/YOUR_ID"
+    },
+    {
+      "title": { "ru": "Сириус.Курсы", "en": "Sirius Courses" },
+      "type": "course",
+      "date": "2024-08-01",
+      "description": {
+        "ru": "Machine Learning, Deep Learning",
+        "en": "Machine Learning, Deep Learning"
+      },
+      "outcome": {
+        "ru": "Мини-проекты по классификации и нейросетям.",
+        "en": "Mini-projects in classification and neural networks."
+      }
+    },
+    {
+      "title": { "ru": "Дополнительная активность", "en": "Additional Activities" },
+      "type": "extra",
+      "date": "2024-01-01",
+      "description": {
+        "ru": "Сборная Москвы по ИИ • Яндекс.Кружок по ИИ • Хакатон PROD (лидерская роль)",
+        "en": "Moscow AI Team • Yandex AI Club • PROD Hackathon (Lead Role)"
+      }
+    }
+  ],
+  "visibility": {
+    "about": true,
+    "skills": true,
+    "projects": true,
+    "education": true,
+    "contacts": true
+  }
+}

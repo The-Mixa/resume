@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница не найдена — Резюме</title>
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      .err-page {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-8);
+      }
+      .err-card {
+        max-width: 480px;
+        text-align: center;
+        padding: var(--space-8);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: var(--color-surface);
+      }
+      .err-card h1 {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-3);
+      }
+      .err-card p {
+        margin-bottom: var(--space-6);
+      }
+      .err-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="err-page">
+      <div class="err-card">
+        <h1>404</h1>
+        <p>Такой страницы нет. Вернитесь на главную или выберите раздел.</p>
+        <div class="err-links">
+          <a class="btn btn--primary" href="/">На главную</a>
+          <a class="btn btn--secondary" href="/#projects">Проекты</a>
+          <a class="btn btn--secondary" href="/#contacts">Контакты</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
