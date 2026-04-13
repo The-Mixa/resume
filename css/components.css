@@ -103,7 +103,7 @@
   color: var(--color-accent-lime);
   display: block;
   margin-top: var(--space-2);
-  text-shadow: 0 0 40px var(--color-accent-lime-glow);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--color-accent-lime-glow) 65%, transparent);
 }
 .hero__elevator {
   font-size: var(--text-xl);
@@ -247,8 +247,8 @@ body.tone-sober .hero-badge {
 }
 .btn--primary:hover {
   background: #54d60a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px var(--color-accent-lime-glow);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--color-accent-lime-glow) 65%, transparent);
 }
 .btn--secondary {
   background: transparent;
@@ -258,7 +258,7 @@ body.tone-sober .hero-badge {
 .btn--secondary:hover {
   border-color: var(--color-accent-lime);
   color: var(--color-accent-lime);
-  box-shadow: 0 0 16px color-mix(in srgb, var(--color-accent-lime) 35%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent-lime) 22%, transparent);
 }
 .section {
   padding: var(--space-12) 0;
@@ -341,8 +341,8 @@ body.tone-sober .hero-badge {
   background: var(--color-accent-lime);
   border-color: var(--color-accent-lime);
   color: #0a0a0a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px var(--color-accent-lime-glow);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-accent-lime-glow) 60%, transparent);
 }
 .soft-list {
   list-style: none;
@@ -382,7 +382,7 @@ body.tone-sober .hero-badge {
   border-color: var(--color-accent-lime);
   color: #0a0a0a;
   font-weight: 600;
-  box-shadow: 0 0 18px var(--color-accent-lime-glow);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent-lime-glow) 70%, transparent);
 }
 .projects-grid {
   display: grid;
@@ -419,9 +419,9 @@ body.tone-sober .hero-badge {
   transform: translateX(100%);
 }
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--color-accent-lime) 45%, transparent),
-    0 12px 40px var(--color-accent-lime-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--color-accent-lime) 24%, transparent),
+    0 6px 16px color-mix(in srgb, var(--color-accent-lime-glow) 55%, transparent);
   border-color: color-mix(in srgb, var(--color-accent-lime) 55%, var(--color-border));
 }
 .project-card.is-hidden {
@@ -565,8 +565,8 @@ body.tone-sober .hero-badge {
 }
 .contact-card:hover {
   border-color: var(--color-accent-lime);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md), 0 0 20px var(--color-accent-lime-glow);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), 0 0 10px color-mix(in srgb, var(--color-accent-lime-glow) 55%, transparent);
 }
 .contact-icon {
   font-size: 1.5rem;
@@ -767,6 +767,9 @@ body.tone-sober .hero-badge {
 .project-card__details {
   margin-top: var(--space-2);
   border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg-alt));
+  overflow: clip;
 }
 .project-card__more {
   cursor: pointer;
@@ -774,15 +777,41 @@ body.tone-sober .hero-badge {
   font-size: var(--text-sm);
   color: var(--color-accent-blue);
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
 }
 .project-card__more::-webkit-details-marker {
   display: none;
 }
+.project-card__more::after {
+  content: '▾';
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+  transform: rotate(0deg);
+  transition: transform 220ms var(--ease-out), color 220ms var(--ease-out);
+}
+.project-card__details[open] .project-card__more::after {
+  transform: rotate(180deg);
+  color: var(--color-accent-lime);
+}
 .project-card__md {
-  margin-top: var(--space-3);
+  margin-top: 0;
   font-size: var(--text-sm);
   line-height: 1.65;
   color: var(--color-text-secondary);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 var(--space-4);
+  transition: max-height 320ms var(--ease-out), opacity 240ms var(--ease-out), padding 240ms var(--ease-out);
+}
+.project-card__details[open] .project-card__md {
+  max-height: 520px;
+  opacity: 1;
+  padding: 0 var(--space-4) var(--space-4);
 }
 .markdown-body h2 {
   font-size: var(--text-lg);
