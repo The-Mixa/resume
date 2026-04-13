@@ -34,7 +34,7 @@ export const CONFIG = {
         'nav.education': 'Образование',
         'nav.contacts': 'Контакты',
         'hero.title': 'Разработчик',
-        'hero.subtitle': '| Участник ВСОШ по ИИ',
+        'hero.subtitle': '| ML-Инженер / Аналитик',
         'hero.description':
           'Школьник 11 класса с фокусом на Machine Learning, Fullstack-разработку и алгоритмы. Призёр заключительного этапа ВСОШ по ИИ, автор работающих продуктов и исследовательских проектов.',
         'hero.cta': 'Смотреть проекты',
@@ -97,7 +97,7 @@ export const CONFIG = {
         'nav.education': 'Education',
         'nav.contacts': 'Contacts',
         'hero.title': 'Developer',
-        'hero.subtitle': '| VSOSH AI Finalist',
+        'hero.subtitle': '| ML-Engeneer / Data Scientist',
         'hero.description':
           '11th grade student focused on Machine Learning, Fullstack development, and algorithms. Finalist of the All-Russian Olympiad in AI, author of production-ready products and research projects.',
         'hero.cta': 'View Projects',

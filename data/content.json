@@ -219,7 +219,7 @@
   ],
   "header": {
     "name": { "ru": "Михаил Кириченко", "en": "Mikhail Kirichenko" },
-    "title": { "ru": "Разработчик | ML-Инженер \ Аналитик", "en": "Developer | ML_Engeneer \ Data Scientist" },
+    "title": { "ru": "Разработчик | ML-Инженер \\ Аналитик", "en": "Developer | ML_Engeneer \\ Data Scientist" },
     "location": "Москва"
   },
   "contacts": {
